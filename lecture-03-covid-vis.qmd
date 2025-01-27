@@ -10,8 +10,9 @@ I cleaned up this data and also added total populations from the 2020 for each o
 Note, due to differences in the way race and ethnicity are encoded in the census as compared to the the COVID Tracking Project, the population counts for LatinX may be somewhat inaccurate.
 
 ```{r load_data}
-suppressPackageStartupMessages(library(tidyverse))
-print(load("CRDT Data.RData"))
+library(tidyverse)
+load("CRDT Data.RData")
+ls()
 ```
 
 I've included 5 different data sets.
@@ -23,8 +24,8 @@ The `covid_data_simple` has a substantially simplified version of the data.
 Start by exploring using different `geom`s, aesthetics, facets, etc.
 
 
-```{r cases_vs_date_plot}
-ggplot(covid_data_simple, aes(x = date, y = Cases)) + geom_point()
+```{r first_plot}
+ggplot(covid_data_count, aes(x = date, y = Cases)) + geom_point()
 ```
 
 
@@ -32,7 +33,7 @@ ggplot(covid_data_simple, aes(x = date, y = Cases)) + geom_point()
 If you want to only look at a specific state, you can do it like this.
 For now, see what you can do just using `ggplot`.
 
-```{r ma_only_plot_w_race}
+```{r}
 covid_data_count |> 
   filter(state == "MA") |> 
   ggplot(aes(x = date, y = Cases, color = race)) + geom_line()
