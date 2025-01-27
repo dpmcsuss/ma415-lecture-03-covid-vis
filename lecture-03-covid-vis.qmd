@@ -1,6 +1,5 @@
 ---
 title: "Week 02: COVID Visualization Activity"
-date: "2024-01-24"
 author: "**`[[`**Your Name**`]]`**"
 format: gfm
 ---
@@ -21,7 +20,7 @@ The data `covid_data_count`, `covid_data_long`, `covid_data_orig`, and `covid_da
 The `covid_data_simple` has a substantially simplified version of the data.
 (Within a few weeks you'll be able to create each of these data sets from the `covid_data_orig` file yourself.)
 
-Start by exploring 
+Start by exploring using different `geom`s, aesthetics, facets, etc.
 
 
 ```{r cases_vs_date_plot}
@@ -39,7 +38,7 @@ covid_data_count |>
   ggplot(aes(x = date, y = Cases, color = race)) + geom_line()
 ```
 
-## Exercise for Friday
+## Exercise for next time
 
 
 **Goal** Make a plot showing the cumulative number of deaths per 100,000 people across time among each race group in the `covid_data_simple`. You only need to use `ggplot`. To get started, you can use this code block.
@@ -51,8 +50,7 @@ ggplot(covid_data_simple, aes(x = date, y = Deaths)) + geom_point()
 
 Comment on the disparities between the race groups.
 
-**If you finish**
-
+**When you finish**
 Either
 
 * Work to polish and improve the the plot you created by incorporating titles, better labels, scales, annotations, etc.
